@@ -8,9 +8,9 @@ from botbuilder.core import BotFrameworkAdapter, BotFrameworkAdapterSettings, Tu
 from botbuilder.schema import Activity
 from bot import EchoBot
 
-@app.route("/test", methods=["GET"])
+@app.route("/api/test", methods=["GET"])
 def test():
-    return {"message": "GET request successful!"}, 200
+    return "Hello, this is a test endpoint!"
 
 # Load environment variables
 load_dotenv()
