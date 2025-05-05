@@ -8,6 +8,10 @@ from botbuilder.core import BotFrameworkAdapter, BotFrameworkAdapterSettings, Tu
 from botbuilder.schema import Activity
 from bot import EchoBot
 
+@app.route("/test", methods=["GET"])
+def test():
+    return {"message": "GET request successful!"}, 200
+
 # Load environment variables
 load_dotenv()
 
