@@ -1,0 +1,8 @@
+flask
+aiohttp
+python-dotenv
+botbuilder-core
+botbuilder-schema
+snowflake-snowpark-python
+snowflake-connector-python
+cryptography
