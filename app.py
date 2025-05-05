@@ -30,7 +30,7 @@ bot = EchoBot()
 app = Flask(__name__)
 
 @app.route("/api/messages", methods=["POST"])
-async def messages():
+def messages():
     # print("Request headers: ", request.headers)
     # print("Request body: ", request.json)
     if "application/json" in request.headers["Content-Type"]:
