@@ -44,7 +44,7 @@ def messages():
     async def aux(turn_context: TurnContext):
         await bot.on_turn(turn_context)
 
-    task = await adapter.process_activity(activity, auth_header, aux)
+    task = adapter.process_activity(activity, auth_header, aux)
     print("--------- TASK ------", task)
     return Response(status=202)
 
