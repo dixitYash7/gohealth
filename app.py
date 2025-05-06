@@ -8,6 +8,9 @@ from botbuilder.core import BotFrameworkAdapter, BotFrameworkAdapterSettings, Tu
 from botbuilder.schema import Activity
 from bot import EchoBot
 
+# Create Flask app
+app = Flask(__name__)
+
 @app.route("/api/test", methods=["GET"])
 def test():
     return "Hello, this is a test endpoint!"
@@ -26,8 +29,6 @@ adapter_settings = BotFrameworkAdapterSettings(APP_ID, APP_PASSWORD)
 adapter = BotFrameworkAdapter(adapter_settings)
 bot = EchoBot()
 
-# Create Flask app
-app = Flask(__name__)
 
 @app.route("/api/messages", methods=["POST"])
 def messages():
