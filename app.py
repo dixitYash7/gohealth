@@ -11,9 +11,29 @@ from bot import EchoBot
 # Create Flask app
 app = Flask(__name__)
 
-@app.route("/api/test", methods=["GET"])
-def test():
-    return "Hello, this is a test endpoint!"
+@app.route("/privacy", methods=["GET"])
+def privacy():
+    return """
+    <html>
+        <head><title>Privacy Policy</title></head>
+        <body>
+            <h1>Privacy Policy</h1>
+            <p>This chatbot does not collect or store any personal data. It is used solely for internal purposes at GoHealth.</p>
+        </body>
+    </html>
+    """
+
+@app.route("/terms", methods=["GET"])
+def terms():
+    return """
+    <html>
+        <head><title>Terms of Use</title></head>
+        <body>
+            <h1>Terms of Use</h1>
+            <p>This chatbot is provided as-is without any warranties. Usage is restricted to authorized personnel at GoHealth.</p>
+        </body>
+    </html>
+    """
 
 # Load environment variables
 load_dotenv()
