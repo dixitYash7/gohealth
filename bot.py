@@ -26,10 +26,9 @@ import requests
 #             password=None,
 #         )
 conn = snowflake.connector.connect(
-    user="GOHEALTH",
-    password="Pass@987654312",
-    account="WGTYAGV-MDB78147",
-    # private_key=private_key,
+    user="GOHELATH1",
+    password="Pass@987654312",  # Move this to env or config.py in production
+    account="TYQTEDS-DTB38259",
     warehouse="COMPUTE_WH",
     database="CORTEX_ANALYST_DEMO",
     schema="REVENUE_TIMESERIES"
@@ -45,11 +44,11 @@ def cortex(input_text):
     # Each path points to a YAML file defining a semantic model
     AVAILABLE_SEMANTIC_MODELS_PATHS = [
         # "DEMO_DB.REVENUE_TIMESERIES.RAW_DATA/HT_del1.yml",
-        'CORTEX_ANALYST_DEMO.REVENUE_TIMESERIES.RAW_DATA/Audit_6.yaml'
+        'CORTEX_ANALYST_DEMO.REVENUE_TIMESERIES.RAW_DATA/Audit_12.yaml'
     ]
         
     # API_ENDPOINT = "/api/v2/cortex/analyst/message"
-    API_ENDPOINT = "https://OTBIIMK-LOB94305.snowflakecomputing.com/api/v2/cortex/analyst/message"
+    API_ENDPOINT = "https://TYQTEDS-DTB38259.snowflakecomputing.com/api/v2/cortex/analyst/message"
     API_TIMEOUT = 100000  # in milliseconds
 
     # Initialize a Snowpark session for executing queries
@@ -72,7 +71,7 @@ def cortex(input_text):
                 }]
             }],
 
-            "semantic_model_file": "@CORTEX_ANALYST_DEMO.REVENUE_TIMESERIES.RAW_DATA/Audit_6.yaml"
+            "semantic_model_file": "@CORTEX_ANALYST_DEMO.REVENUE_TIMESERIES.RAW_DATA/Audit_12.yaml"
         
         }
         response = requests.post(API_ENDPOINT , json=request_body, headers=headers)
